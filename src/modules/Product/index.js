@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
 
 const Product = () => {
   const { id } = useParams();
@@ -35,7 +36,7 @@ const Product = () => {
     } else {
       localStorage.setItem('cart', JSON.stringify([...cart, {...product, quantity: 1}]))
     }
-    alert('Product added to cart')
+    toast.success("product added to cart")
     if(redirect) {
       navigate('/cart')
     }
