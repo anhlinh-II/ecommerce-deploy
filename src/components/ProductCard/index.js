@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ProductCard = ({ products = [] }) => {
@@ -8,26 +8,26 @@ const ProductCard = ({ products = [] }) => {
         <div className="flex flex-wrap -m-4">
           {
             products.map((product) => {
-              console.log(product, 'product')
               const { id, title, price, description, category, image } = product;
+              const formattedPrice = (price * 1000 * 24).toLocaleString() + 'đ'; // Format price
               return (
-                <Link to={`/products/${id}`} className="lg:w-[23%] md:w-1/2 p-4 w-full mb-4 cursor-pointer rounded-lg shadow ml-4">
+                <Link to={`/products/${id}`} key={id} className="lg:w-[23%] md:w-1/2 p-4 w-full mb-4 cursor-pointer rounded-lg shadow ml-4">
                   <a className="block relative h-48 rounded overflow-hidden">
-                    <img alt={title} className=" object-contain object-center w-full h-full block" src={image} />
+                    <img alt={title} className="object-contain object-center w-full h-full block" src={image} />
                   </a>
                   <div className="mt-4">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">{category}</h3>
                     <h2 className="text-gray-900 title-font text-lg font-medium">{title}</h2>
-                    <p className="mt-1 text-md font-semibold">${price}</p>
+                    <p className="mt-1 text-md font-semibold">{formattedPrice}</p> {/* Display formatted price */}
                   </div>
                 </Link>
-              )
+              );
             })
           }
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default ProductCard
+export default ProductCard;
