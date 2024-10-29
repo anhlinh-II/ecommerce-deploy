@@ -1,6 +1,8 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="text-gray-600 body-font border-t-2">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
@@ -35,7 +37,7 @@ const Footer = () => {
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">GIỚI THIỆU</h2>
             <nav className="list-none mb-10">
               <li>
-                <a href="/about-us" className="text-gray-600 hover:text-gray-800">Về chúng tôi</a>
+                <a href="/about" className="text-gray-600 hover:text-gray-800">Về chúng tôi</a>
               </li>
               <li>
                 <a href="/careers" className="text-gray-600 hover:text-gray-800">Cơ hội nghề nghiệp</a>
