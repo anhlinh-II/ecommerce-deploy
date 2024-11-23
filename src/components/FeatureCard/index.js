@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const categoryTranslations = {
-  electronics: 'Điện tử',
-  jewelery: 'Trang sức',
-  "men's clothing": 'Thời trang nam',
-  "women's clothing": 'Thời trang nữ',
+  electronics: 'Electronics',
+  jewelery: 'Jewelry',
+  "men's clothing": "Men's Clothing",
+  "women's clothing": "Women's Clothing",
 };
 
 const FeatureCard = ({ cards = [] }) => {
@@ -13,8 +13,8 @@ const FeatureCard = ({ cards = [] }) => {
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-20">
-          <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">DANH MỤC</h2>
-          <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">Danh Mục Phổ Biến Của Chúng Tôi</h1>
+          <h2 className="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">CATEGORIES</h2>
+          <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900">Our Popular Categories</h1>
         </div>
         <div className="flex flex-wrap -m-4">
           {
@@ -32,8 +32,8 @@ const FeatureCard = ({ cards = [] }) => {
                       <h2 className="text-gray-900 text-lg title-font font-medium capitalize">{title}</h2>
                     </div>
                     <div className="flex-grow">
-                      <p className="leading-relaxed text-base">Sản phẩm hàng đầu trong lĩnh vực, đảm bảo về chất lượng phù hợp tương xứng với giá cả.</p>
-                      <a className="mt-3 text-indigo-500 inline-flex items-center">Tìm hiểu thêm
+                      <p className="leading-relaxed text-base">Top products in the field, ensuring quality suitable for the price.</p>
+                      <a className="mt-3 text-indigo-500 inline-flex items-center">Learn more
                         <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-2" viewBox="0 0 24 24">
                           <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>

@@ -5,56 +5,56 @@ const AboutDetails = () => {
     const aboutSections = [
         {
             id: 1,
-            title: 'Chúng Tôi Là Ai',
+            title: 'Who We Are',
             shortText: `
-                Chúng tôi là một đội ngũ chuyên nghiệp tận tâm, tin rằng việc mua sắm nên đơn giản và thú vị cho khách hàng của mình.
+                We are a dedicated, professional team that believes shopping should be simple and enjoyable for our customers.
             `,
             longText: `
-                Đội ngũ của chúng tôi bao gồm những cá nhân đầy nhiệt huyết, luôn cố gắng mang lại trải nghiệm mua sắm xuất sắc. Chúng tôi hiểu rằng việc mua sắm có thể khiến bạn cảm thấy quá tải, vì vậy chúng tôi cam kết đơn giản hóa quá trình và đảm bảo rằng bạn tìm thấy chính xác những gì bạn đang tìm kiếm.
+                Our team consists of passionate individuals who strive to provide an excellent shopping experience. We understand that shopping can sometimes feel overwhelming, so we are committed to simplifying the process and ensuring you find exactly what you are looking for.
                 
-                Chúng tôi tin vào việc xây dựng mối quan hệ bền chặt với khách hàng thông qua việc lắng nghe nhu cầu và phản hồi của họ. Mục tiêu của chúng tôi là tạo ra một môi trường thân thiện, nơi mỗi khách hàng đều cảm thấy được đánh giá và trân trọng. Hãy tham gia cùng chúng tôi trong hành trình này, và để chúng tôi giúp bạn tìm ra những sản phẩm hoàn hảo phù hợp với lối sống của bạn!
+                We believe in building strong relationships with our customers by listening to their needs and feedback. Our goal is to create a welcoming environment where every customer feels valued and appreciated. Join us on this journey, and let us help you discover the perfect products to match your lifestyle!
                 
-                Chúng tôi không chỉ là một cửa hàng trực tuyến; chúng tôi là một cộng đồng, và chúng tôi mời bạn trở thành một phần của nó!
+                We are more than just an online store; we are a community, and we invite you to be a part of it!
             `,
             imageUrl: 'https://images.pexels.com/photos/3861970/pexels-photo-3861970.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         },
         {
             id: 2,
-            title: 'Sứ Mệnh Của Chúng Tôi',
+            title: 'Our Mission',
             shortText: `
-                Sứ mệnh của chúng tôi là trao quyền cho bạn bằng cách cung cấp những sản phẩm chất lượng hàng đầu và dịch vụ xuất sắc.
+                Our mission is to empower you by providing top-quality products and outstanding service.
             `,
             longText: `
-                Tại tâm điểm của công ty chúng tôi là cam kết trao quyền cho khách hàng thông qua các sản phẩm chất lượng cao và dịch vụ xuất sắc. Chúng tôi tin rằng mua sắm nên là một trải nghiệm tích cực, đó là lý do tại sao chúng tôi luôn nỗ lực để đảm bảo rằng bạn hài lòng với mỗi lần mua hàng.
+                At the heart of our company is a commitment to empower our customers through high-quality products and exceptional service. We believe shopping should be a positive experience, which is why we work hard to ensure you are satisfied with every purchase.
                 
-                Sứ mệnh của chúng tôi không chỉ dừng lại ở việc bán sản phẩm; chúng tôi mong muốn cung cấp cho bạn thông tin và hỗ trợ cần thiết để bạn có thể đưa ra quyết định đúng đắn. Chúng tôi cẩn thận chọn lọc sản phẩm của mình để đảm bảo rằng chúng tôi chỉ cung cấp những sản phẩm đáp ứng tiêu chuẩn khắt khe về chất lượng và giá trị.
+                Our mission goes beyond selling products; we want to provide you with the information and support you need to make informed decisions. We carefully select our products to ensure that we offer only those that meet our high standards of quality and value.
                 
-                Sự hài lòng của bạn là ưu tiên hàng đầu của chúng tôi, và chúng tôi luôn sẵn sàng hỗ trợ bạn trong mọi bước đường, cho dù bạn có thắc mắc về sản phẩm hay cần trợ giúp với đơn hàng của mình.
+                Your satisfaction is our top priority, and we are always ready to assist you at every step, whether you have questions about products or need help with your order.
             `,
             imageUrl: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         },
         {
             id: 3,
-            title: 'Sản Phẩm Chất Lượng',
+            title: 'Quality Products',
             shortText: `
-                Chúng tôi cẩn thận chọn lọc các sản phẩm từ những nhà cung cấp uy tín, đảm bảo mỗi mặt hàng đều đáp ứng tiêu chuẩn cao của chúng tôi.
+                We carefully select products from trusted suppliers, ensuring each item meets our high standards.
             `,
             longText: `
-                Chất lượng là yếu tố tối quan trọng trong mọi thứ mà chúng tôi làm. Chúng tôi tin rằng khách hàng của mình xứng đáng nhận được những điều tốt nhất, đó là lý do tại sao chúng tôi cẩn thận lựa chọn các sản phẩm từ những nhà cung cấp uy tín, những người chia sẻ cam kết của chúng tôi về sự xuất sắc.
+                Quality is the key factor in everything we do. We believe our customers deserve the best, which is why we carefully choose products from trusted suppliers who share our commitment to excellence.
                 
-                Mỗi mặt hàng trong cửa hàng của chúng tôi đều trải qua một quy trình chọn lọc nghiêm ngặt để đảm bảo rằng nó đáp ứng tiêu chuẩn cao về chất lượng, độ bền và hiệu suất. Chúng tôi không ngừng đánh giá các sản phẩm của mình để đảm bảo rằng chúng tôi đang cung cấp những tùy chọn tốt nhất có sẵn trên thị trường.
+                Every item in our store undergoes a rigorous selection process to ensure it meets high standards for quality, durability, and performance. We continually assess our products to ensure we are offering the best options available in the market.
                 
-                Cam kết của chúng tôi đối với chất lượng có nghĩa là bạn có thể mua sắm với sự tự tin, biết rằng mỗi lần mua hàng đều được hỗ trợ bởi cam kết của chúng tôi đối với sự hài lòng của khách hàng. Hãy khám phá bộ sưu tập của chúng tôi và trải nghiệm sự khác biệt mà chúng tôi mang lại!
+                Our commitment to quality means you can shop with confidence, knowing that every purchase is backed by our dedication to customer satisfaction. Explore our collection and experience the difference we bring!
             `,
             imageUrl: 'https://images.pexels.com/photos/3738081/pexels-photo-3738081.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
         },
     ];
     
-    // Tìm phần nội dung theo ID
+    // Find the content section by ID
     const section = aboutSections.find((section) => section.id === parseInt(id));
 
     if (!section) {
-        return <div>Không tìm thấy phần nội dung!</div>;
+        return <div>Content not found!</div>;
     }
 
     return (

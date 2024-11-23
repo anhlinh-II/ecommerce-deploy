@@ -9,9 +9,9 @@ const ProductCard = ({ products = [] }) => {
           {
             products.map((product) => {
               const { id, title, price, description, category, image } = product;
-              const formattedPrice = (price * 1000 * 24).toLocaleString() + 'đ'; // Format price
+              const formattedPrice = (price).toLocaleString() + '$'; // Format price
               return (
-                <Link to={`/products/${id}`} key={id} className="lg:w-[23%] md:w-1/2 p-4 w-full mb-4 cursor-pointer rounded-lg shadow ml-4">
+                <Link to={`/products/${title}`} key={id} className="lg:w-[23%] md:w-1/2 p-4 w-full mb-4 cursor-pointer rounded-lg shadow ml-4">
                   <a className="block relative h-48 rounded overflow-hidden">
                     <img alt={title} className="object-contain object-center w-full h-full block" src={image} />
                   </a>

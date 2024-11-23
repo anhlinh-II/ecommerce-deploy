@@ -1,59 +1,102 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { IoIosLogOut } from 'react-icons/io';
+import { AiOutlineShoppingCart } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../../modules/AuthContext';
+import { useProductContext } from '../../modules/ProductContext';
 
 const navigations = [
   {
-    name: 'Trang chủ',
+    name: 'Home',
     path: '/'
   },
   {
-    name: 'Sản phẩm',
+    name: 'Products',
     path: '/products'
   },
   {
-    name: 'Tin tức',
+    name: 'News',
     path: '/news'
   },
   {
-    name: 'Về chúng tôi',
+    name: 'About Us',
     path: '/about'
   },
   {
-    name: 'Liên hệ',
+    name: 'Contact',
     path: '/contact'
+  },
+  {
+    name: 'Admin',
+    path: 'admin/products',
+    requiresAdmin: true // Flag to indicate admin-only navigation
   }
-]
+];
 
 const Header = () => {
+  const { setIsAuthenticate } = useAuth();
+  const { isAdmin } = useAuth();
+
+  console.log("isAdmin >> ", isAdmin);
+
   return (
     <header className="text-gray-600 body-font shadow-lg">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <Link to={'/'} className="flex cursor-pointer title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <Link
+          to={'/'}
+          className="flex cursor-pointer title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            viewBox="0 0 24 24"
+          >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          <span className="ml-3 text-xl">Ecommerce - Nhóm 3</span>
+          <span className="ml-3 text-xl">Ecommerce</span>
         </Link>
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-          {
-            navigations.map((navigation) => {
-              return (
-                <Link to={navigation.path} className="mr-5 hover:text-gray-900">{navigation.name}</Link>
-              )
-            })
-          }
+          {navigations
+            .filter(
+              (navigation) => !navigation.requiresAdmin || isAdmin // Show only admin links if isAdmin is true
+            )
+            .map((navigation) => (
+              <Link
+                key={navigation.name}
+                to={navigation.path}
+                className="mr-5 hover:text-gray-900"
+              >
+                {navigation.name}
+              </Link>
+            ))}
         </nav>
-        <div className='flex gap-2'>
-          <input placeholder='search...' className='p-2 w-36 border border-indigo-500 rounded focus:outline-none' />
-          <Link to={'/cart'} className="inline-flex items-center text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded text-base mt-4 md:mt-0">Giỏ hàng
-            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
+        <div className="flex gap-4 items-center">
+          {/* Log out button with icon */}
+          <Link
+            to={'/login'}
+            className="flex gap-1 items-center text-gray-900 hover:text-indigo-500"
+          >
+            <IoIosLogOut className="text-2xl" />
+            <span className="hidden md:block">Log out</span>
+          </Link>
+          {/* Cart button with icon */}
+          <Link
+            to={'/cart'}
+            onClick={() => setIsAuthenticate(false)}
+            className="flex gap-1 items-center text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded"
+          >
+            <AiOutlineShoppingCart className="text-xl" />
+            <span className="hidden md:block">Cart</span>
           </Link>
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
