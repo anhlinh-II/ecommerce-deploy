@@ -4,14 +4,14 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter } from 'react-icons/f
 const Contact = () => {
     return (
         <div className="container mx-auto px-4 lg:px-8 bg-gray-100 py-16">
-            <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Liên Hệ Với Chúng Tôi</h1>
+            <h1 className="text-4xl font-bold text-center text-gray-800 mb-12">Contact with us</h1>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 {/* Contact Form */}
                 <div className="bg-white p-8 rounded-lg shadow-lg">
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-6">Kết Nối Với Chúng Tôi</h2>
+                    <h2 className="text-3xl font-semibold text-gray-800 mb-6">Connect with us</h2>
                     <form>
                         <div className="mb-4">
-                            <label className="block text-gray-700" htmlFor="name">Họ Tên</label>
+                            <label className="block text-gray-700" htmlFor="name">Name</label>
                             <input
                                 className="w-full border border-gray-300 rounded-md p-2"
                                 type="text"
@@ -31,7 +31,7 @@ const Contact = () => {
                             />
                         </div>
                         <div className="mb-4">
-                            <label className="block text-gray-700" htmlFor="message">Tin Nhắn</label>
+                            <label className="block text-gray-700" htmlFor="message">Message</label>
                             <textarea
                                 className="w-full border border-gray-300 rounded-md p-2"
                                 id="message"
@@ -51,7 +51,7 @@ const Contact = () => {
 
                 {/* Map Section */}
                 <div className="bg-white rounded-lg shadow-lg">
-                    <h2 className="text-3xl font-semibold text-gray-800 text-center p-4">Địa Điểm Của Chúng Tôi</h2>
+                    <h2 className="text-3xl font-semibold text-gray-800 text-center p-4">Our location</h2>
                     <iframe
                         title="Map"
                         className="w-full h-[86%] rounded-lg"
@@ -62,7 +62,7 @@ const Contact = () => {
                 </div>
             </div>
             <div className="mt-12 text-center bg-white w-full py-4">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-6">Theo Dõi Chúng Tôi</h2>
+                <h2 className="text-3xl font-semibold text-gray-800 mb-6">Follow us</h2>
                 <div className="flex justify-center space-x-6">
                     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 transition">
                         <FaFacebookF size={30} />

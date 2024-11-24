@@ -16,8 +16,8 @@ const Login = () => {
     // Retrieve registered user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
-    if ((storedUser && storedUser.email === email && storedUser.password === password) || (password === "admin" && email === "nguyenanhlinh@gmail.com")) {
-      if(password === "admin" && email === "nguyenanhlinh@gmail.com") {
+    if ((storedUser && storedUser.email === email && storedUser.password === password) || (password === "12345678" && email === "anhlinhita@gmail.com")) {
+      if(password === "12345678" && email === "anhlinhita@gmail.com") {
         setIsAdmin(true);
       }
       setIsAuthenticate(true); // Update auth state

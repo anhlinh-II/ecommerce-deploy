@@ -5,63 +5,69 @@ const News = () => {
     const newsArticles = [
         {
             id: 1,
-            title: 'Sản Phẩm Mới Trong Thời Trang!',
-            date: 'Ngày 20 tháng 10, 2024',
+            title: 'New Arrivals in Fashion!',
+            slug: 'new-arrivals-in-fashion',
+            date: 'October 20, 2024',
             excerpt:
-                'Khám phá những xu hướng và bộ sưu tập mới nhất từ cửa hàng thời trang của chúng tôi. Tìm hiểu những phong cách tươi mới và những ưu đãi độc quyền!',
+                'Discover the latest trends and collections from our fashion store. Explore fresh styles and exclusive offers!',
             imageUrl: 'https://images.pexels.com/photos/994517/pexels-photo-994517.jpeg',
         },
         {
             id: 2,
-            title: 'Giảm Giá Mùa Lễ',
-            date: 'Ngày 18 tháng 10, 2024',
+            title: 'Holiday Discounts',
+            slug: 'holiday-discounts',
+            date: 'October 18, 2024',
             excerpt:
-                'Chuẩn bị cho đợt giảm giá lớn nhất trong năm. Giảm giá mạnh trên điện tử, quần áo, và nhiều hơn nữa!',
+                'Get ready for the biggest sale of the year. Huge discounts on electronics, clothing, and more!',
             imageUrl: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg',
         },
         {
             id: 3,
-            title: 'Ưu Đãi Độc Quyền Trên Đồ Dùng Nhà Bếp',
-            date: 'Ngày 15 tháng 10, 2024',
+            title: 'Exclusive Deals on Kitchenware',
+            slug: 'exclusive-deals-on-kitchenware',
+            date: 'October 15, 2024',
             excerpt:
-                'Khám phá bộ sưu tập đồ dùng nhà bếp cao cấp của chúng tôi và nhận ưu đãi độc quyền trong tháng này.',
+                'Check out our premium kitchenware collection and enjoy exclusive offers this month.',
             imageUrl: 'https://images.pexels.com/photos/7651828/pexels-photo-7651828.jpeg',
         },
         {
             id: 4,
-            title: 'Ra Mắt Bộ Sưu Tập Mùa Đông',
-            date: 'Ngày 12 tháng 10, 2024',
+            title: 'Winter Collection Launch',
+            slug: 'winter-collection-launch',
+            date: 'October 12, 2024',
             excerpt:
-                'Khám phá bộ sưu tập mùa đông mới của chúng tôi với những trang phục ấm áp, phong cách và thoải mái cho mùa lạnh.',
+                'Discover our new winter collection featuring warm, stylish, and comfortable outfits for the cold season.',
             imageUrl: 'https://images.pexels.com/photos/4440153/pexels-photo-4440153.jpeg',
         },
         {
             id: 5,
-            title: 'Hé Lộ Những Ưu Đãi Ngày Black Friday',
-            date: 'Ngày 8 tháng 10, 2024',
+            title: 'Black Friday Sneak Peek',
+            slug: 'black-friday-sneak-peek',
+            date: 'October 8, 2024',
             excerpt:
-                'Nhận cái nhìn thoáng qua về những ưu đãi Black Friday sắp tới của chúng tôi trên điện tử, thời trang và đồ gia dụng.',
+                'Get a sneak peek at our upcoming Black Friday deals on electronics, fashion, and home appliances.',
             imageUrl: 'https://images.pexels.com/photos/5632384/pexels-photo-5632384.jpeg',
         },
         {
             id: 6,
-            title: 'Sản Phẩm Bán Chạy Nhất Trong Điện Tử',
-            date: 'Ngày 5 tháng 10, 2024',
+            title: 'Best-Selling Electronics',
+            slug: 'best-selling-electronics',
+            date: 'October 5, 2024',
             excerpt:
-                'Khám phá những sản phẩm điện tử bán chạy nhất trong năm và sở hữu chúng với giá không thể tin được.',
+                'Explore the best-selling electronics of the year and grab them at unbelievable prices.',
             imageUrl: 'https://images.pexels.com/photos/5723377/pexels-photo-5723377.jpeg',
         },
-        // Thêm nhiều bài viết nếu cần
+        // Add more articles if needed
     ];
 
     const handleClickNews = (item) => {
-        navigate(`/news/${item.id}`)
+        navigate(`/news/${item.slug}`)
     }
 
     return (
         <div className="bg-gray-100 py-10">
             <div className="container mx-auto px-4">
-                <h1 className="text-4xl font-bold text-center mb-8">Tin Tức Mới Nhất</h1>
+                <h1 className="text-4xl font-bold text-center mb-8">Latest News</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {newsArticles.map((article) => (
                         <div

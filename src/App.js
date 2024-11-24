@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './modules/Home';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Product from './modules/Product';
 import Products from './modules/Products';
 import CategoryProducts from './modules/CategoryProducts';
@@ -20,9 +20,17 @@ import AdminProduct from './modules/AdminProduct';
 
 function App() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Paths where Header and Footer should not be displayed
   const hideHeaderFooter = ['/login', '/register'];
+
+  useEffect(() => {
+    // Check if the URL includes "ecommerce-deploy"
+    if (window.location.href.includes('ecommerce-deploy')) {
+      navigate('/login');
+    }
+  }, [navigate]);
 
   return (
     <div>
@@ -33,7 +41,7 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/categories/:name" element={<CategoryProducts />} />
         <Route path="/news" element={<News />} />
-        <Route path="/news/:id" element={<NewsDetails />} />
+        <Route path="/news/:slug" element={<NewsDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/about" element={<About />} />
         <Route path="/about/:id" element={<AboutDetails />} />

@@ -77,8 +77,8 @@ const About = () => {
                               <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                                    {/* Who We Are */}
                                    <div
-                                        onClick={() => handleOnclickAbout(1)}
-                                        className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6"
+                                        onClick={() => handleOnclickAbout('who-we-are')}
+                                        className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6 cursor-pointer"
                                    >
                                         <h3 className="text-2xl font-semibold text-gray-800 mb-4">Who We Are</h3>
                                         <p className="text-base text-gray-600 mb-4">
@@ -93,8 +93,8 @@ const About = () => {
 
                                    {/* Our Mission */}
                                    <div
-                                        onClick={() => handleOnclickAbout(2)}
-                                        className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6"
+                                        onClick={() => handleOnclickAbout('our-mission')}
+                                        className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6 cursor-pointer"
                                    >
                                         <h3 className="text-2xl font-semibold text-gray-800 mb-4">Our Mission</h3>
                                         <p className="text-base text-gray-600 mb-4">
@@ -109,8 +109,8 @@ const About = () => {
 
                                    {/* Quality Products */}
                                    <div
-                                        onClick={() => handleOnclickAbout(3)}
-                                        className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6"
+                                        onClick={() => handleOnclickAbout('quality-product')}
+                                        className="flex flex-col justify-center bg-white rounded-lg shadow-lg p-6 cursor-pointer"
                                    >
                                         <h3 className="text-2xl font-semibold text-gray-800 mb-4">Quality Products</h3>
                                         <p className="text-base text-gray-600 mb-4">
