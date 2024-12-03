@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useAuth } from './AuthContext';
 import { useProductContext } from './ProductContext';
@@ -8,23 +8,27 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { setIsAuthenticate, setIsAdmin } = useAuth(); // Access setIsAuthenticate
+  const location = useLocation(); // Access location state
+  const { setIsAuthenticate, setIsAdmin } = useAuth();
 
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Retrieve registered user data from localStorage
     const storedUser = JSON.parse(localStorage.getItem('user'));
 
     if ((storedUser && storedUser.email === email && storedUser.password === password) || (password === "12345678" && email === "anhlinhita@gmail.com")) {
-      if(password === "12345678" && email === "anhlinhita@gmail.com") {
+      if (password === "12345678" && email === "anhlinhita@gmail.com") {
         setIsAdmin(true);
       }
-      setIsAuthenticate(true); // Update auth state
+      setIsAuthenticate(true);
+
       toast.success('Logged in successfully!');
-      navigate('/');
+
+      // Redirect to the previous page or home
+      const redirectTo = location.state?.redirectTo || '/';
+      navigate(redirectTo);
     } else {
-      toast.error('Login fail, check your email and password');
+      toast.error('Login failed, check your email and password');
     }
   };
 

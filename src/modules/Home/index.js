@@ -13,11 +13,6 @@ const Home = () => {
   const { isAuthenticate } = useAuth();
 
   useEffect(() => {
-    if (!isAuthenticate) {
-      navigate('/login');
-      return;
-    }
-
     const fetchProducts = async () => {
       const storedProducts = localStorage.getItem('products');
       if (storedProducts) {

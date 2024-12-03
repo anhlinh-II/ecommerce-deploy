@@ -3,41 +3,18 @@ import { IoIosLogOut } from 'react-icons/io';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../modules/AuthContext';
-import { useProductContext } from '../../modules/ProductContext';
 
 const navigations = [
-  {
-    name: 'Home',
-    path: '/'
-  },
-  {
-    name: 'Products',
-    path: '/products'
-  },
-  {
-    name: 'News',
-    path: '/news'
-  },
-  {
-    name: 'About Us',
-    path: '/about'
-  },
-  {
-    name: 'Contact',
-    path: '/contact'
-  },
-  {
-    name: 'Admin',
-    path: 'admin/products',
-    requiresAdmin: true // Flag to indicate admin-only navigation
-  }
+  { name: 'Home', path: '/' },
+  { name: 'Products', path: '/products' },
+  { name: 'News', path: '/news' },
+  { name: 'About Us', path: '/about' },
+  { name: 'Contact', path: '/contact' },
+  { name: 'Admin', path: 'admin/products', requiresAdmin: true }, // Admin-only navigation
 ];
 
 const Header = () => {
-  const { setIsAuthenticate } = useAuth();
-  const { isAdmin } = useAuth();
-
-  console.log("isAdmin >> ", isAdmin);
+  const { setIsAuthenticate, isAuthenticate, isAdmin } = useAuth();
 
   return (
     <header className="text-gray-600 body-font shadow-lg">
@@ -63,7 +40,7 @@ const Header = () => {
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {navigations
             .filter(
-              (navigation) => !navigation.requiresAdmin || isAdmin // Show only admin links if isAdmin is true
+              (navigation) => !navigation.requiresAdmin || isAdmin // Show admin links only if isAdmin is true
             )
             .map((navigation) => (
               <Link
@@ -76,18 +53,27 @@ const Header = () => {
             ))}
         </nav>
         <div className="flex gap-4 items-center">
-          {/* Log out button with icon */}
-          <Link
-            to={'/login'}
-            className="flex gap-1 items-center text-gray-900 hover:text-indigo-500"
-          >
-            <IoIosLogOut className="text-2xl" />
-            <span className="hidden md:block">Log out</span>
-          </Link>
-          {/* Cart button with icon */}
+          {isAuthenticate ? (
+            // Logout button
+            <button
+              onClick={() => setIsAuthenticate(false)}
+              className="flex gap-1 items-center text-gray-900 hover:text-indigo-500"
+            >
+              <IoIosLogOut className="text-2xl" />
+              <span className="hidden md:block">Log out</span>
+            </button>
+          ) : (
+            // Login button
+            <Link
+              to={'/login'}
+              className="flex gap-1 items-center text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded"
+            >
+              <span className="hidden md:block">Login</span>
+            </Link>
+          )}
+          {/* Cart button */}
           <Link
             to={'/cart'}
-            onClick={() => setIsAuthenticate(false)}
             className="flex gap-1 items-center text-white bg-indigo-500 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-700 rounded"
           >
             <AiOutlineShoppingCart className="text-xl" />

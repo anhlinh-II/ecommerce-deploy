@@ -28,7 +28,7 @@ function App() {
   useEffect(() => {
     // Check if the URL includes "ecommerce-deploy"
     if (window.location.href.includes('ecommerce-deploy')) {
-      navigate('/login');
+      navigate('/');
     }
   }, [navigate]);
 
